@@ -31,23 +31,32 @@ def menu():
         print("1. Vérifier si une année est bissextile")
         print("2. Trouver toutes les années bissextiles dans une période")
         print("3. Quitter")
-
-        choix = input("Entrez votre choix (1, 2 ou 3) : ")
+        try:
+            choix = input("Entrez votre choix (1, 2 ou 3) : ")
+        except ValueError:
+            print("Entre un nombre, soit pas bebete")
 
         if choix == "1":
-            year = int(input("Entrez une année : "))
-            if is_leap_year(year):
-                print(f"{year} est une année bissextile.")
-            else:
-                print(f"{year} n'est pas une année bissextile.")
+            try :
+                year = int(input("Entrez une année : "))
+                if is_leap_year(year):
+                    print(f"{year} est une année bissextile.")
+                else:
+                    print(f"{year} n'est pas une année bissextile.")
+            except ValueError:
+                print("Entre un nombre, soit pas bebete")
+
         elif choix == "2":
-            start_year = int(input("Entrez l'année de début : "))
-            end_year = int(input("Entrez l'année de fin : "))
-            leap_year = leap_year_in_period(start_year, end_year)
-            if leap_year:
-                print(f"Année(s) bissextiles entre {start_year} et {end_year} : {leap_year}")
-            else:
-                print(f"Il n'y a pas d'années bissextiles entre {start_year} et {end_year}.")
+            try :
+                start_year = int(input("Entrez l'année de début : "))
+                end_year = int(input("Entrez l'année de fin : "))
+                leap_year = leap_year_in_period(start_year, end_year)
+                if leap_year:
+                    print(f"Année(s) bissextiles entre {start_year} et {end_year} : {leap_year}")
+                else:
+                    print(f"Il n'y a pas d'années bissextiles entre {start_year} et {end_year}.")
+            except ValueError:
+                print("Entre un nombre, soit pas bebete")
         elif choix == "3":
             print("Fermeture du script.")
             break
