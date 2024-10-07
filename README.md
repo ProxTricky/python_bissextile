@@ -37,5 +37,7 @@ Pour se faire il vous suffit de rentrer le numéro correspondant à votre choix 
 ## Structure des fonctions
 
     is_leap_year(year): Vérifie si une année donnée est bissextile.
+
     leap_year_in_period(start_year, end_year): Retourne une liste d'années bissextiles entre deux années.
+
     menu(): Affiche le menu principal pour choisir entre les différentes options.
